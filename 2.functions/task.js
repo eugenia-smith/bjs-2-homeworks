@@ -37,9 +37,9 @@ function makeWork(arrOfArr, func) {
   let max = -Infinity;
 
   for (let k = 0; k < arrOfArr.length; k++) {
-    worker(arrOfArr[k]);
-    if (worker(arrOfArr[k]) > max) {
-      max = worker(arrOfArr[k]);
+    func(arrOfArr[k]);
+    if (func(arrOfArr[k]) > max) {
+      max = func(arrOfArr[k]);
     }
   }
   
@@ -48,5 +48,21 @@ function makeWork(arrOfArr, func) {
 
 // Задание 3
 function worker2(arr) {
-  // Ваш код
+  let min = arr[0];
+  let max = arr[0];
+
+  for (let l = 0; l < arr.length; l++) {
+    if (arr[l] < min) {
+      min = arr[l];
+    }
+
+    if (arr[l] > max) {
+      max = arr[l]
+    }
+
+  }
+  let difference = max - min;
+  return difference;
 }
+
+
